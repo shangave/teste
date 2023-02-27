@@ -101,8 +101,8 @@
         <h1 id="title">Sua calculdora de IMC</h1>
         <input type="number" id="peso" placeholder="Digite a massa em Kg.">
         <input type="number" id="altura" placeholder="Digite a altura em metros.">
-        <button type="button" id="botao" onclick="Calcular()">Calcular</button>
-        <button type="button" id="limpar" onclick="Limpar()">Limpar</button>
+        <button type="button" id="botao" onclick="calcular()">Calcular</button>
+        <button type="button" id="limpar" onclick="limpar()">Limpar</button>
 
         <div class="output">O resultado de seu IMC é: <span id="output"> </span></div>
 
@@ -112,10 +112,12 @@
   
  
 
-
+<!--
     <script defer>
-        var peso = parseFloat(document.getElementById('peso'));
-        var altura = parseFloat(document.getElementById('altura'));
+        var peso = parseFloat(document.getElementById('peso').value);
+		console.log("peso" , peso);
+        var altura = parseFloat(document.getElementById('altura').value);
+		console.log("altura" , altura);
         var output1 = document.getElementById('output');
         const calcular = document.getElementById('botao');
 
@@ -123,17 +125,40 @@
 
         console.log(peso);
 
-        function Calcular(peso, altura) {
+        function calcular(peso, altura) {
 
             let resultado = peso / (altura * altura);
             output1.innerHTML = resultado;
             console.log(resultado)
         }
 
-        function Limpar() {
+        function limpar() {
             var limpo = '';
             peso = limpo;
             altura = limpo;
+        }
+
+    </script>
+	
+-->	
+	
+	<script defer>
+	
+	
+        const calcular = () => {
+		
+			let peso = parseFloat(document.getElementById('peso').value);
+			let altura = parseFloat(document.getElementById('altura').value);
+			let output1 = document.getElementById('output');
+
+            let resultado = peso / (altura * altura);
+            document.getElementById('output').innerHTML = resultado;
+			
+        }
+
+        const limpar = () => {
+			document.getElementById('peso').value = '';
+			document.getElementById('altura').value = '';
         }
 
     </script>
