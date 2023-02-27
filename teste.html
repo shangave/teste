@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC-Calculator</title>
+
+    <style>
+        body {
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            
+        }
+
+        .MainPage {
+            border-radius: 25px;
+            display: block;
+            margin-top: 7%;
+            padding: 50px;
+            background-color: darkblue;
+           
+
+        }
+
+        #peso {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+            margin-bottom: 30px;
+        }
+
+        #altura {
+            padding: 10px 20px;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        #botao {
+            background: linear-gradient(to bottom, #44c767 5%, #5cbf2a 100%);
+            background-color: #44c767;
+            border-radius: 28px;
+            border: 1px solid #18ab29;
+            display: inline-block;
+            cursor: pointer;
+            color: #ffffff;
+            font-family: Arial;
+            font-size: 17px;
+            padding: 16px 31px;
+            text-decoration: none;
+            text-shadow: 0px 1px 0px #2f6627;
+            margin-bottom: 15px;
+        }
+
+        #botao:hover {
+            background: linear-gradient(to bottom, #5cbf2a 5%, #44c767 100%);
+            background-color: #5cbf2a;
+        }
+
+        #limpar {
+            display: inline-block;
+            margin-left: 40px;
+            padding: 16px 31px;
+            border-radius: 28px;
+            background-color: darkred;
+            border: 1px solid black;
+            color: white;
+            font-family: Arial;
+            font-size: 17px;
+            cursor: pointer;
+        }
+
+        #limpar:hover {
+            background-color: firebrick;
+        }
+
+        #limpar:active {
+            background-color: black;
+        }
+
+        .output,
+        #output,
+        h1 {
+            display: block;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="MainPage">
+
+
+        <h1 id="title">Sua calculdora de IMC</h1>
+        <input type="number" id="peso" placeholder="Digite a massa em Kg.">
+        <input type="number" id="altura" placeholder="Digite a altura em metros.">
+        <button type="button" id="botao" onclick="Calcular()">Calcular</button>
+        <button type="button" id="limpar" onclick="Limpar()">Limpar</button>
+
+        <div class="output">O resultado de seu IMC é: <span id="output"> </span></div>
+
+
+
+    </div>
+  
+ 
+
+
+    <script defer>
+        var peso = parseFloat(document.getElementById('peso'));
+        var altura = parseFloat(document.getElementById('altura'));
+        var output1 = document.getElementById('output');
+        const calcular = document.getElementById('botao');
+
+        let titulo = document.getElementById('title');
+
+        console.log(peso);
+
+        function Calcular(peso, altura) {
+
+            let resultado = peso / (altura * altura);
+            output1.innerHTML = resultado;
+            console.log(resultado)
+        }
+
+        function Limpar() {
+            var limpo = '';
+            peso = limpo;
+            altura = limpo;
+        }
+
+    </script>
+
+
+
+
+</body>
+
+</html>
